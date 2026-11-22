@@ -1,6 +1,5 @@
 package com.example.declarative_ui_with_jetpack_compose.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -12,32 +11,35 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = ChaiBrown80,
+    onPrimary = ChaiBrownContainer80,
+    primaryContainer = ChaiBrownContainer80,
+    onPrimaryContainer = ChaiBrownContainer40,
+    secondary = Cardamom80,
+    tertiary = Saffron80,
+    background = Espresso,
+    onBackground = OnEspresso,
+    surface = Espresso,
+    onSurface = OnEspresso
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = ChaiBrown40,
+    primaryContainer = ChaiBrownContainer40,
+    onPrimaryContainer = ChaiBrownContainer80,
+    secondary = Cardamom40,
+    tertiary = Saffron40,
+    background = Cream,
+    onBackground = OnCream,
+    surface = Cream,
+    onSurface = OnCream
 )
 
 @Composable
 fun DeclarativeUIwithJetpackComposeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    // Off by default so the custom chai palette shows; set true to use Android 12+ wallpaper colors.
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {

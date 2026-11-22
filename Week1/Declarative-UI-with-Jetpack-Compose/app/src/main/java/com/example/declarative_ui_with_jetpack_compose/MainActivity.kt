@@ -6,8 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -15,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.declarative_ui_with_jetpack_compose.day1.CounterScreen
 import com.example.declarative_ui_with_jetpack_compose.day1.ProfileScreen
 import com.example.declarative_ui_with_jetpack_compose.day2.RecompositionDemo
-import com.example.declarative_ui_with_jetpack_compose.day3.ContactListScreen
+import com.example.declarative_ui_with_jetpack_compose.day4.ChaiScaffoldScreen
 import com.example.declarative_ui_with_jetpack_compose.ui.theme.DeclarativeUIwithJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,10 +22,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DeclarativeUIwithJetpackComposeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    // Day 3 screen is a lazy list, so it can't share a non-scrolling Column with Day 1/2 content.
-                    ContactListScreen(modifier = Modifier.padding(innerPadding))
-                }
+                // Day 4 screen owns its Scaffold (TopAppBar + FAB) and hosts the Day 3 contact list.
+                ChaiScaffoldScreen(modifier = Modifier.fillMaxSize())
             }
         }
     }

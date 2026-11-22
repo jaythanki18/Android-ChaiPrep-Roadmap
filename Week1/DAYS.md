@@ -31,3 +31,16 @@ Files (under `Declarative-UI-with-Jetpack-Compose/`):
 - `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/MainActivity.kt` (Scaffold now shows `ContactListScreen`; `Day1Screen` is kept but no longer shown, since a lazy list can't live inside a non-scrolling Column)
 
 Verify: open in Android Studio, sync Gradle, run on an emulator (scroll the list, tap Add contact / Remove first), or view the preview in ContactListScreen.kt.
+
+## Day 4
+Task: Read Material Design 3 components and color schemes; Practise custom theme with typography and color palettes; Practise Scaffold with TopAppBar and FloatingActionButton.
+
+Files (under `Declarative-UI-with-Jetpack-Compose/`):
+- `notes/Day4-material3-components-and-color-schemes.md` (new)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/ui/theme/Color.kt` (replaced default purples with a chai palette: brown, cardamom, saffron, cream/espresso)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/ui/theme/Type.kt` (serif titleLarge/titleMedium, plus bodyLarge and labelLarge)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/ui/theme/Theme.kt` (light/dark schemes use the palette; `dynamicColor` now defaults to false so the custom palette shows)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/day4/ChaiScaffoldScreen.kt` (new: Scaffold with TopAppBar, FAB showing a Snackbar, hosts `ContactListScreen`; light and dark previews)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/MainActivity.kt` (now shows `ChaiScaffoldScreen` instead of its own Scaffold around `ContactListScreen`)
+
+Verify: open in Android Studio, sync Gradle, run on an emulator (themed top bar, contact list, FAB shows "Chai ordered!" snackbar; toggle system dark mode), or view the previews in ChaiScaffoldScreen.kt.
