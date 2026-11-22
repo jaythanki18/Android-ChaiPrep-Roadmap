@@ -4,13 +4,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.declarative_ui_with_jetpack_compose.day1.CounterScreen
+import com.example.declarative_ui_with_jetpack_compose.day1.ProfileScreen
 import com.example.declarative_ui_with_jetpack_compose.ui.theme.DeclarativeUIwithJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +23,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DeclarativeUIwithJetpackComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Day1Screen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -31,17 +31,17 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun Day1Screen(modifier: Modifier = Modifier) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        ProfileScreen(name = "Chai Lover", role = "Android Developer", followers = 120, following = 48)
+        CounterScreen()
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun Day1ScreenPreview() {
     DeclarativeUIwithJetpackComposeTheme {
-        Greeting("Android")
+        Day1Screen()
     }
 }
