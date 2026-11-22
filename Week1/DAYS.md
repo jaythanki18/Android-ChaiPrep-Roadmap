@@ -21,3 +21,13 @@ Files (under `Declarative-UI-with-Jetpack-Compose/`):
 - `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/MainActivity.kt` (added `RecompositionDemo()` below the Day 1 content)
 
 Verify: open in Android Studio, sync Gradle, run on an emulator (Tap / Add cup buttons; Add cup disables and dims at 5), or open ChaiButton.kt and view the previews in the Preview pane.
+
+## Day 3
+Task: Read LazyColumn and LazyRow; Practise scrollable contact list with dynamic data; Practise item keys in LazyColumn.
+
+Files (under `Declarative-UI-with-Jetpack-Compose/`):
+- `notes/Day3-lazy-lists-and-keys.md` (new)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/day3/ContactListScreen.kt` (new: `Contact` model, `ContactListScreen` with a LazyRow of favourites, a LazyColumn of 30 contacts using `key = { it.id }`, Add contact / Remove first buttons on a `mutableStateListOf`, preview)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/MainActivity.kt` (Scaffold now shows `ContactListScreen`; `Day1Screen` is kept but no longer shown, since a lazy list can't live inside a non-scrolling Column)
+
+Verify: open in Android Studio, sync Gradle, run on an emulator (scroll the list, tap Add contact / Remove first), or view the preview in ContactListScreen.kt.
