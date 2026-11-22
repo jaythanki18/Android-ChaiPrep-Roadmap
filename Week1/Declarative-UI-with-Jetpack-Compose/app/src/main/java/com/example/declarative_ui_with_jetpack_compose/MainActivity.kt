@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.declarative_ui_with_jetpack_compose.day1.CounterScreen
 import com.example.declarative_ui_with_jetpack_compose.day1.ProfileScreen
+import com.example.declarative_ui_with_jetpack_compose.day2.RecompositionDemo
 import com.example.declarative_ui_with_jetpack_compose.ui.theme.DeclarativeUIwithJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,6 +36,7 @@ fun Day1Screen(modifier: Modifier = Modifier) {
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         ProfileScreen(name = "Chai Lover", role = "Android Developer", followers = 120, following = 48)
         CounterScreen()
+        RecompositionDemo()
     }
 }
 
