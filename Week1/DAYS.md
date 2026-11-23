@@ -53,3 +53,14 @@ Files (under `Declarative-UI-with-Jetpack-Compose/`):
 - `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/day3/ContactListScreen.kt` (list now uses `ExpandableContactRow` and is wrapped in `ContactsCrossfade`)
 
 Verify: open in Android Studio, sync Gradle, run on an emulator (tap a contact to expand/collapse; press Remove first repeatedly until empty to see the crossfade, then Add contact), or view the preview in ExpandableContactRow.kt.
+
+## Day 6
+Task: Read Canvas and DrawScope for custom graphics; Practise a custom progress bar using DrawScope; Practise a custom shape for an image component.
+
+Files (under `Declarative-UI-with-Jetpack-Compose/`):
+- `notes/Day6-canvas-and-custom-shapes.md` (new)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/day6/ChaiProgressBar.kt` (new: `ChaiProgressBar` drawn with Canvas/DrawScope, animated fill, quarter ticks; preview)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/day6/HexagonShape.kt` (new: custom `HexagonShape` (Outline.Generic path) and `HexagonAvatar` clipped to it; preview)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/day3/ContactListScreen.kt` (shows `ChaiProgressBar` of contacts out of 30; avatars now use `HexagonAvatar`; unused imports removed)
+
+Verify: open in Android Studio, sync Gradle, run on an emulator (progress bar under Favourites animates as you Add/Remove contacts; avatars are hexagons), or view the previews in the day6 files.
