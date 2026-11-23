@@ -44,3 +44,12 @@ Files (under `Declarative-UI-with-Jetpack-Compose/`):
 - `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/MainActivity.kt` (now shows `ChaiScaffoldScreen` instead of its own Scaffold around `ContactListScreen`)
 
 Verify: open in Android Studio, sync Gradle, run on an emulator (themed top bar, contact list, FAB shows "Chai ordered!" snackbar; toggle system dark mode), or view the previews in ChaiScaffoldScreen.kt.
+
+## Day 5
+Task: Read animation APIs (AnimatedVisibility, animateContentSize); Practise expand/collapse animation on a list item; Practise a crossfade between two UI states.
+
+Files (under `Declarative-UI-with-Jetpack-Compose/`):
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/day5/ExpandableContactRow.kt` (new: `ExpandableContactRow` using AnimatedVisibility + animateContentSize; `ContactsCrossfade` using Crossfade between empty state and list; preview)
+- `app/src/main/java/com/example/declarative_ui_with_jetpack_compose/day3/ContactListScreen.kt` (list now uses `ExpandableContactRow` and is wrapped in `ContactsCrossfade`)
+
+Verify: open in Android Studio, sync Gradle, run on an emulator (tap a contact to expand/collapse; press Remove first repeatedly until empty to see the crossfade, then Add contact), or view the preview in ExpandableContactRow.kt.

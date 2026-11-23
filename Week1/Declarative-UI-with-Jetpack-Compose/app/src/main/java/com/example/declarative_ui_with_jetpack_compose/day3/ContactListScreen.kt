@@ -25,6 +25,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.declarative_ui_with_jetpack_compose.day2.ChaiButton
+import com.example.declarative_ui_with_jetpack_compose.day5.ContactsCrossfade
+import com.example.declarative_ui_with_jetpack_compose.day5.ExpandableContactRow
 import com.example.declarative_ui_with_jetpack_compose.ui.theme.DeclarativeUIwithJetpackComposeTheme
 
 data class Contact(val id: Int, val name: String, val phone: String)
@@ -58,11 +60,15 @@ fun ContactListScreen(modifier: Modifier = Modifier) {
             )
         }
 
-        LazyColumn(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
-            // key keeps each row's identity stable when items are inserted or removed,
-            // so Compose reuses the right row instead of recomposing everything below.
-            items(items = contacts, key = { it.id }) { contact ->
-                ContactRow(contact)
+        // Day 5: crossfade between the empty state and the list.
+        ContactsCrossfade(isEmpty = contacts.isEmpty()) {
+            LazyColumn(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
+                // key keeps each row's identity stable when items are inserted or removed,
+                // so Compose reuses the right row instead of recomposing everything below.
+                items(items = contacts, key = { it.id }) { contact ->
+                    // Day 5: rows expand/collapse on tap.
+                    ExpandableContactRow(contact)
+                }
             }
         }
     }
